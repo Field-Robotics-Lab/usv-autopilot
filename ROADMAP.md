@@ -14,10 +14,4 @@ What is where, what comes next, and how this repo relates to other work.
 
 - Thesis: parameter sensitivity analysis of ArduPilot Rover on the Blackjack 42. It lives in the student's own repo and uses this one. Findings that generalize, such as the parameter-to-control-element map and the tuning order, come back here.
 - [me2801](https://github.com/bsb808/me2801): the course uses the same boat. Related material there: the log pipeline (`utils/ardu_utils/`, `book/w03_lab_usv_sysid/code/`, `book/w07_lab_usv_pid/code/`), the boat params (`utils/ardu_params/`) and the provisioning guide (`site/weeks/w03_lab_usv_sysid/provisioning.qmd`). Some docs may be shared or combined. Whether anything moves is decided when a directory here first needs it.
-- [oceans2026](https://github.com/Field-Robotics-Lab/oceans2026): Python model identification of the Blackjack 42.
-- [ird-autopilot-maritime](https://github.com/HonuRobotics/ird-autopilot-maritime): internal R&D proposal and report.
-- [ardu_utils](https://github.com/bsb808/ardu_utils): an older copy of the log tools, which has diverged from the me2801 copy.
 
-## Open items
-
-1. Log reading (`bin2mat`, `load_and_prep`) is needed first by SITL. Recommend starting it in `usv-sitl/matlab/`, and moving it only if field work needs it too.
