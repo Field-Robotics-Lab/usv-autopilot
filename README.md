@@ -11,21 +11,20 @@ The work splits into three efforts, one directory each:
 | Directory | Effort | Status | Next |
 |---|---|---|---|
 | [usv-analysis/](usv-analysis/) | Analytical: MATLAB transfer-function models of the plant and of the ArduPilot speed and steering loops | started | linear speed-loop model from the ArduPilot source, then steering |
-| [usv-sitl/](usv-sitl/) | Numerical: a reproducible ArduPilot SITL environment (Linux/WSL2, MATLAB, Mission Planner) and the tooling to run parameter sets in it | started | settle the architecture in `docs/design/`, then the first verified setup page |
+| [usv-sitl/](usv-sitl/) | Numerical: a reproducible ArduPilot SITL environment (Linux/WSL2, MATLAB, Mission Planner) and the tooling to run parameter sets in it | started | settle the architecture in `docs/reference/`, then the first verified setup page |
 | `usv-field/` | Field tests: trial params, post-processing | deferred | contents decided when field work starts |
 
 ## Docs conventions
 
-Docs are plain Markdown, rendered by GitHub, with no build step. Each effort has its own `docs/`, using the same four folders:
+Docs are plain Markdown, rendered by GitHub, with no build step. Each effort has its own `docs/`, using the same three folders:
 
 | Folder | Holds |
 |---|---|
 | `getting-started/` | setup to a first working run |
-| `walkthroughs/` | one task per page |
-| `design/` | architecture, derivations, and the reasons behind them |
-| `reference/` | parameters, tables |
+| `walkthroughs/` | one task per page, step by step |
+| `reference/` | architecture, derivations and the reasons behind them; parameters, tables |
 
-A walkthrough page has:
+A walkthrough has:
 - one or two sentences of purpose;
 - Prerequisites, as links to the pages that must pass first;
 - copy-paste steps, each with a sentence of why;
