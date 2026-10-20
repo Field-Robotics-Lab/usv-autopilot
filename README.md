@@ -1,20 +1,18 @@
 # usv-autopilot
 
-Tools, environments and documentation for tuning and analyzing ArduPilot Rover on small single-prop, single-rudder unmanned surface vehicles. The first platform is a Pro Boat Blackjack 42 running ArduPilot Rover on a Cube Orange+. The methods are meant to carry over to other vessels.
+Tools, environments and documentation for tuning and analyzing ArduPilot Rover on small single-prop, single-rudder unmanned surface vehicles. The first platform is the me2801 USV, but the methods are meant to carry over to other vessels.
 
-The audience is collaborating faculty, researchers and engineering students. The bar is that someone else can reproduce the work from the docs and code.
+The audience is collaborators, not beginners.  The requirement is that a technical user should be able to run and modify the experimetns **without** communicating directly with to the author. 
 
 ## Layout
 
 The work splits into three efforts, one directory each:
 
-| Directory | Effort | Status |
-|---|---|---|
-| [usv-analysis/](usv-analysis/) | Analytical: MATLAB transfer-function models of the plant and of the ArduPilot speed and steering loops | started |
-| [usv-sitl/](usv-sitl/) | Numerical: a reproducible ArduPilot SITL environment and the tooling to run parameter sets in it | started |
-| `usv-field/` | Field tests: trial params, post-processing | deferred |
-
-Code lives in the directory of the effort it serves. Nothing is centralized up front. When a second effort needs something, we decide then whether to share it. [ROADMAP.md](ROADMAP.md) summarizes what is where and how this repo relates to other work.
+| Directory | Effort | Status | Next |
+|---|---|---|---|
+| [usv-analysis/](usv-analysis/) | Analytical: MATLAB transfer-function models of the plant and of the ArduPilot speed and steering loops | started | linear speed-loop model from the ArduPilot source, then steering |
+| [usv-sitl/](usv-sitl/) | Numerical: a reproducible ArduPilot SITL environment (Linux/WSL2, MATLAB, Mission Planner) and the tooling to run parameter sets in it | started | settle the architecture in `docs/design/`, then the first verified setup page |
+| `usv-field/` | Field tests: trial params, post-processing | deferred | contents decided when field work starts |
 
 ## Docs conventions
 
@@ -23,7 +21,7 @@ Docs are plain Markdown, rendered by GitHub, with no build step. Each effort has
 | Folder | Holds |
 |---|---|
 | `getting-started/` | setup to a first working run |
-| `how-to/` | one task per page |
+| `walkthroughs/` | one task per page |
 | `design/` | architecture, derivations, and the reasons behind them |
 | `reference/` | parameters, tables |
 
@@ -34,4 +32,9 @@ A walkthrough page has:
 - pinned versions (tag or commit) where it matters;
 - the environment it was tested in.
 
-Where several components meet, use a pieces table: what each piece is, how it is installed and where it goes. Diagrams are Mermaid blocks. Add a page only when there is something to reproduce. Write each paragraph as one line, with no hard wrapping.
+Where several components meet, use a pieces table: what each piece is, how it is installed and where it goes. Diagrams are Mermaid blocks. Write each paragraph as one line, with no hard wrapping.
+
+## Outside this repo
+
+- Thesis specific code: parameter sensitivity analysis lives in separate own repo(s) and uses this one. Findings that generalize, such as the parameter-to-control-element map and the tuning order, come back here.  This repo is a the reusable part of the project and a contribution to the community.  
+- [me2801](https://github.com/bsb808/me2801): the course uses the same boat. Related material there: the log pipeline (`utils/ardu_utils/`, `book/w03_lab_usv_sysid/code/`, `book/w07_lab_usv_pid/code/`), the boat params (`utils/ardu_params/`) and the provisioning guide (`site/weeks/w03_lab_usv_sysid/provisioning.qmd`). Some docs may be shared or combined. 
