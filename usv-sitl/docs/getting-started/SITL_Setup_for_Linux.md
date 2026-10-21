@@ -15,11 +15,11 @@ How to run ArduPilot's stock motorboat in SITL (software-in-the-loop) on Ubuntu,
 * MATLAB R2026b with the UAV Toolbox
 * Mission Planner-1.3.83 (optional)
 
-!\[SITL architecture and default network ports](https://ardupilot.org/dev/\_images/sitl-architecture.svg)
+![SITL architecture and default network ports](https://ardupilot.org/dev/\_images/sitl-architecture.svg)
 
-Source: ArduPilot \[1], [Setting up the Build Environment (Linux/Ubuntu)](https://ardupilot.org/dev/docs/building-setup-linux.html)
+Source: ArduPilot [1], [Setting up the Build Environment (Linux/Ubuntu)](https://ardupilot.org/dev/docs/building-setup-linux.html)
 
-\---
+---
 
 ## Quick setup
 
