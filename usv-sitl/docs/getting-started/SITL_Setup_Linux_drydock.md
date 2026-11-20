@@ -34,7 +34,6 @@ Git runs on the host; building and running SITL, and the Python scripts, run in 
 
 Source: ArduPilot [2], [Setting up the Build Environment (Linux/Ubuntu)](https://ardupilot.org/dev/docs/building-setup-linux.html)
 
-<!-- GH: Until the drydock PR adding projects/usv-sitl is merged, the drydock clone has no usv-sitl project: add `git -C drydock switch bsb/usv-sitl-project` after it (once the branch is pushed). -->
 On the host:
 
 ```bash
