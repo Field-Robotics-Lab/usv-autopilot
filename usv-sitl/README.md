@@ -11,4 +11,5 @@ docs/reference/       architecture (living design record), params, tables
 vehicles/             SITL params and frame config for the boat
 scripts/              launch SITL, run a param set, collect the log
 matlab/               MATLAB that drives SITL and post-processes its logs
+python/               Python counterparts of the MATLAB scripts
 ```

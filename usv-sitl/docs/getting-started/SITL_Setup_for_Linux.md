@@ -1,6 +1,9 @@
 # ArduPilot Rover SITL Setup: Stock Motorboat
 
-How to run ArduPilot's stock motorboat in SITL (software-in-the-loop) on Ubuntu, following ArduPilot's own documentation, pinned to release **Rover-4.7.2**.
+How to run ArduPilot's stock motorboat in SITL (software-in-the-loop) on Ubuntu, following ArduPilot's own documentation, pinned to release **Rover-4.7.2**. This is the setup developed for Windows: SITL runs in Ubuntu under WSL2, and MATLAB and Mission Planner run on Windows.
+
+> [!NOTE]
+> The same functionality on Linux only, with SITL in a [drydock](https://github.com/HonuRobotics/drydock) container and Python in place of MATLAB, is in [SITL_Setup_Linux_drydock.md](SITL_Setup_Linux_drydock.md).
 
 **Prerequisites**
 
