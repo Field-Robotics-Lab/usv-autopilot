@@ -1,6 +1,9 @@
 # ArduPilot Rover SITL Setup: Stock Motorboat
 
-How to run ArduPilot's stock motorboat in SITL (software-in-the-loop) on Ubuntu, following ArduPilot's own documentation, pinned to release **Rover-4.7.2**.
+How to run ArduPilot's stock motorboat in SITL (software-in-the-loop) on Ubuntu, following ArduPilot's own documentation, pinned to release **Rover-4.7.2**. This is the setup developed for Windows: SITL runs in Ubuntu under WSL2, and MATLAB and Mission Planner run on Windows.
+
+> [!NOTE]
+> The same functionality on Linux only, with SITL in a [drydock](https://github.com/HonuRobotics/drydock) container and Python in place of MATLAB, is in [SITL_Setup_Linux_drydock.md](SITL_Setup_Linux_drydock.md).
 
 **Prerequisites**
 
@@ -23,46 +26,11 @@ Source: ArduPilot [1], [Setting up the Build Environment (Linux/Ubuntu)](https:/
 
 ## Quick setup
 
-To do Steps 1–5a in one go on a fresh Ubuntu 22.04, paste these commands into a terminal. Each one is explained in the step it comes from.
-
-
-Clone the ArduRover code
-```bash
-cd ~
-git clone --recurse-submodules https://github.com/ArduPilot/ardupilot.git
-cd ardupilot
-git checkout Rover-4.7.2
-git submodule update --init --recursive
-```
-
-Install the build tools
-```bash
-Tools/environment_install/install-prereqs-ubuntu.sh -y
-. ~/.profile
-```
-
-Build SITL
-
-```bash ./waf configure --board sitl
-./waf rover
-```
-
-Save the test lake as a location (skipped if LAKE is already saved)
+To do Steps 1–4 in one go on a fresh Ubuntu 22.04, download [Linux_script.sh](../../scripts/Linux_script.sh) and run:
 
 ```bash
-mkdir -p ~/.config/ardupilot
-grep -q "^LAKE=" ~/.config/ardupilot/locations.txt 2>/dev/null || \
-  echo "LAKE=36.5986135,-121.8689162,0,0" >> ~/.config/ardupilot/locations.txt
+bash Linux_script.sh
 ```
-
-Launch the motorboat at the test lake
-
-```bash 
-cd ~/ardupilot/Rover
-../Tools/autotest/sim_vehicle.py -f motorboat --map --console -L LAKE
-```
-
-On WSL2 with mirrored networking, add `--no-wsl2-network` to the last command (see Step 4).
 
 ## Step 1. Get the ArduPilot code
 
